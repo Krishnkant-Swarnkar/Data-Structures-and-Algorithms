@@ -44,11 +44,14 @@ void hull(point A,point B,int sign){
 }
 
 main(){
+    cout<<"Enter the no. of points:";
 	cin>>n;
 	while(n<=0){
+		cout<<"\nPlease enter a valid number of points:";
 		cin>>n;
 	}
 	P=new point[n+2];
+	cout<<"Enter the points <a> <b> without any angular brackets:\n";
 	for(int i=0;i<n;i++){
 		int a,b;
 		cin>>a>>b;

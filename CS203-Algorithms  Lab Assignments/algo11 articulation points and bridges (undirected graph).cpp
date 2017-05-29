@@ -12,7 +12,7 @@ using namespace std;
 #define trace5(a, b, c, d, e)    cerr << #a << ": " << a << " | " << #b << ": " << b << " | " << #c << ": " << c << " | " << #d << ": " << d << " | " << #e << ": " << e << endl;
 #define trace6(a, b, c, d, e, f) cerr << #a << ": " << a << " | " << #b << ": " << b << " | " << #c << ": " << c << " | " << #d << ": " << d << " | " << #e << ": " << e << " | " << #f << ": " << f << endl;
 
-vector<vector<int> >L; 
+vector<vector<int> >L;
 vector<int>v,low_t,vis_t;
 vector<pair<int,int> >B;
 bool AP[100005];
@@ -20,7 +20,7 @@ int n,m,Time=0,root,rootchild=0,par[100005];
 /*
 articulation point:a point which when removed from a connected graph along with its edges, it makes the graph disconnected.
 Bridge:an edge which when removed from a connected graph, it makes the graph disconnected.
-*/ 
+*/
 void APnB(int S=1){//Articulation points and Bridges(actually modified dfs)
 	vis_t[S]=low_t[S]=Time++;
 	for(auto u: L[S]){
@@ -39,8 +39,9 @@ void APnB(int S=1){//Articulation points and Bridges(actually modified dfs)
 }
 
 int main(){
-	
+
 	L.clear();vis_t.clear();low_t.clear();
+	cout<<"Enter no of Vertices and no of Edges:";
 	cin>>n>>m;
 	for(int i=0;i<=n;i++){
 		L.pb(v);
@@ -49,6 +50,7 @@ int main(){
 		par[i]=-1;AP[i]=0;
 	}
 	par[1]=0;
+	cout<<"Enter Edges <a> <b>:\n"
 	for(int i=0;i<m;i++){
 		int a,b;
 		cin>>a>>b;

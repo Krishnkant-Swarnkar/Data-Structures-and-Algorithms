@@ -42,7 +42,8 @@ int main(){
 	cout<<"Enter size:";cin>>n;
 	while(n<=0){
 		cout<<"INVALID INPUT\nEnter size:";cin>>n;
-	} 
+	}
+	cout<<"Enter Array:";
 	SIZE=pow(2,ceil(log2((double)n)) );
 	a=new int[SIZE+1];
 	for(i=0;i<n;i++){cin>>a[i];}

@@ -38,6 +38,7 @@ int main(){
 		cout<<"INVALID INPUT\nEnter size:";cin>>n;
 	}
 	a=new int[n+5];
+	cout<<"Enter the array:";
 	for(int i=0;i<n;i++){cin>>a[i];}
 	quickSort(0,n);
 	cout<<"sorted:";

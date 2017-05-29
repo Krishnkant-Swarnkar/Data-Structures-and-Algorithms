@@ -73,7 +73,7 @@ void ready(string &a,string &b)
 	int mx=max(la,lb);
 	int n=(2*mx+1)/2;
 	a=fill(a,mx);
-	b=fill(b,mx);	
+	b=fill(b,mx);
 }
 
 long long bintodec(string b){
@@ -87,8 +87,9 @@ long long bintodec(string b){
 }
 
 int main(){
-	ios_base::sync_with_stdio(false);cin.tie(false);cout.tie(false);
+	//ios_base::sync_with_stdio(false);cin.tie(false);cout.tie(false);
 	string a,b;
+	cout<<"Enter the two binary strings:\n";
 	cin>>a>>b;
 	ready(a,b);
 	int la=a.length(),lb=b.length();
@@ -100,7 +101,7 @@ int main(){
 		string temp=mul(a[i],b)+zero(la-1-i);
 		ready(res,temp);
 		res=add_ab(res,temp);
-	}	
+	}
 	cout<<res;
 	cout<<"\nans:"<<bintodec(res);
 	return 0;

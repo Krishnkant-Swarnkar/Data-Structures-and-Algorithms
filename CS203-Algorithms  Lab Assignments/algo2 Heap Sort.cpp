@@ -4,7 +4,7 @@ using namespace std;
 class Heap{
 	int *a;
 	int SIZE,max_size=1000;
-	
+
 	void BuildHeap(){
 		for(int i=SIZE/2;i>=1;i--){
 			minHeapify(i);
@@ -13,7 +13,7 @@ class Heap{
 	void minHeapify(int i){
 		int l=2*i,r=2*i+1,lesser=i;
 		if(l<=SIZE && a[l]<a[lesser]){
-			lesser=l;	
+			lesser=l;
 		}
 		if(r<=SIZE && a[r]<a[lesser]){
 			lesser=r;
@@ -29,8 +29,8 @@ class Heap{
 			swap(a[i/2],a[i]);
 			update(i/2);
 		}
-	} 
-	
+	}
+
 	public:
 	Heap(){
 		a=new int[max_size];
@@ -40,16 +40,16 @@ class Heap{
 		SIZE=0;
 		a=new int[max_size];
 		for(int i=l;i<r;i++){
-			Insert(arr[i]);	
+			Insert(arr[i]);
 		}
 	}
 	Heap(int n){
 		SIZE=0;
 		max_size=n;
 		a=new int[max_size];
-	}	
+	}
 
-	
+
 	int Delete(){
 		swap(a[1],a[SIZE]);
 		SIZE--;
@@ -78,14 +78,14 @@ class Heap{
 		}
 	}
 	void show(){
-		cout<<"\nshow:"<<'\n';
+		cout<<"\nHeap Show:"<<'\n';
 		for(int i=1;i<=SIZE;i++){
 			cout<<a[i]<<" ";
 		}
 		cout<<'\n';
 	}
 	void inorder(int i){
-		
+
 		int L=2*i,R=2*i+1;
 		if(i>SIZE){return ;}
 		inorder(L);
@@ -96,8 +96,9 @@ class Heap{
 
 int Sort(int arr[],int l,int r){
 	Heap H(arr,l,r);
+
 	H.show();
-	cout<<"Inorder:\n";
+	cout<<"Heap Show Inorder:\n";
 	H.inorder(1);
 	cout<<'\n';
 	H.Sort(arr);
@@ -115,10 +116,10 @@ int main(){
 		cin>>arr[i];
 	}
 	Sort(arr,0,n);
-	cout<<"Sorter Order   : "; 
+	cout<<"Sorter Order   : \n";
 	for(int i=0;i<n;i++){
 		cout<<arr[i]<<" ";
 	}
-	
+
 	return 0;
 }
